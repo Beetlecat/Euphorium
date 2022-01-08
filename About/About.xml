@@ -1,0 +1,11 @@
+<ModMetaData>
+    <name>Euphorium</name>
+    <description>This mod adds Euphorium to the game: a potent drug that will boost your pawn's stats at the risk of Ambrosia addiction.</description>
+    <author>DrEnzyme;Beetlecat</author>
+    <supportedVersions>
+        <li>1.1</li>
+        <li>1.2</li>
+        <li>1.3</li>
+    </supportedVersions>
+    <packageId>drenzyme.euphorium</packageId>
+</ModMetaData>

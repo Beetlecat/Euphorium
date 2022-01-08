@@ -1,0 +1,20 @@
+<Defs>
+    <!-- Euphorium is a ThingDef, and we are telling -->
+    <!-- the game that we want to make it a Drug-->
+    <ThingDef ParentName="MakeableDrugBase">
+        <!-- What XML calls our item -->
+        <defName>Euphorium</defName>
+        <!-- What Rimworld calls our item -->
+        <label>Euphorium</label>
+        <!-- Description of our item when you click the "i" button -->
+        <description>A potent drug that will heaviliy boost stats at the risk of Ambrosia addicition.</description>
+        <!-- This stuff loads the textures for our drug -->
+        <graphicData>
+            <texPath>Things/Item/Drug/Euphorium</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <statBases>
+            
+        </statBases>
+    </ThingDef>
+</Defs>
