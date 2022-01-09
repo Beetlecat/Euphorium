@@ -14,7 +14,93 @@
             <graphicClass>Graphic_StackCount</graphicClass>
         </graphicData>
         <statBases>
-            
+            <!-- How much work does it take to craft this item? -->
+            <WorkToMake>500</WorkToMake>
+            <!-- How much is this item worth to traders? -->
+            <MarketValue>10</MarketValue>
+            <!-- How much does the item weigh (in KG, I think)? -->
+            <Mass>0.01</Mass>
         </statBases>
+        <!-- This is the recipe for our item -->
+        <!-- I.e. what it takes to craft it -->
+        <costList>
+            <Ambrosia>2</Ambrosia>
+            <Neutroamine>2</Neutroamine>
+            <InsectJelly>5</InsectJelly>
+        </costList>
+        <!-- All the values we need for an ingestible drug -->
+        <ingestible>
+            <foodType>Processed</foodType>
+            <joyKind>Chemical</joyKind>
+            <joy>0.30</joy>
+            <drugCategory>Hard</drugCategory>
+            <baseIngestTicks>150</baseIngestTicks>
+            <chairSearchRadius>4</chairSearchRadius>
+            <!-- Can someone feed you this drug? -->
+            <nurseable>true</nurseable>
+            <!-- Put outcomedoers here later -->
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>EuphoriumHigh</hediffDef>
+                    <severity>0.50</severity>
+                    <toleranceChemical>Ambrosia</toleranceChemical>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>AmbrosiaTolerance</hediffDef>
+                    <severity>0.032</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <comps>
+            <li Class="CompProperties_Drug">
+                <chemical>Ambrosia</chemical>
+                <addictiveness>0.030</addictiveness>
+                <minToleranceToAddict>0.15</minToleranceToAddict>
+                <listOrder>40</listOrder>
+            </li>
+        </comps>
     </ThingDef>
+    
+    <!-- This is the definition for our drugs's effect -->
+    <HediffDef>
+        <!-- This is used by other defs when referring to this def -->
+        <defName>EuphoriumHigh</defName>
+        <!-- Strings that the game uses when describing our drug effect -->
+        <label>high on Euphorium</label>
+        <labelNoun>a Euphorium high</labelNoun>
+        <description>An amazingly potent drug that gives a boost to many stats at once.</description>
+        <hediffClass>Hediff_High</hediffClass>
+        <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-3.0</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <painFactor>0.5</painFactor>
+                <restFallFactor>0.33</restFallFactor>
+                <statOffsets>
+                    <ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+                </statOffsets>
+                <capMods>
+                    <li>
+                        <capacity>Conciousness</capacity>
+                        <offset>0.20</offset>
+                    </li>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <offset>0.35</offset>
+                    </li>               
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>1.0</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
 </Defs>
