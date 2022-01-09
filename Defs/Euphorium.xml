@@ -59,6 +59,16 @@
                 <listOrder>40</listOrder>
             </li>
         </comps>
+        <!-- This gives the game information about the research we need -->
+        <!-- to unlock this item, and the buildings that we can make -->
+        <!-- our item from. -->
+        <recipeMaker>
+            <researchPrerequisite>EuphoriumProduction</researchPrerequisite>
+            <recipeUsers>
+                <li>DrugLab</li>
+            </recipeUsers>
+            <soundWorking>Recipe_Drug</soundWorking>
+        </recipeMaker>
     </ThingDef>
     
     <!-- This is the definition for our drugs's effect -->
@@ -88,7 +98,7 @@
                 </statOffsets>
                 <capMods>
                     <li>
-                        <capacity>Conciousness</capacity>
+                        <capacity>Consciousness</capacity>
                         <offset>0.20</offset>
                     </li>
                     <li>
@@ -103,4 +113,21 @@
             </li>
         </stages>
     </HediffDef>
+    <ResearchProjectDef>
+        <defName>EuphoriumProduction</defName>
+        <label>Euphorium Production</label>
+        <description>Refine Ambrosia into a powerful drug that vastly increases a wide range of stats.</description>
+        <!-- Number of research points it costs to unlock our drug -->
+        <baseCost>400</baseCost>
+        <!-- How "advanced" this research is -->
+        <!-- Tribal factions will have a harder time researching it -->
+        <techLevel>Industrial</techLevel>
+        <!-- Research dependency needed before this node becomes available -->
+        <prerequisites>
+            <li>DrugProduction</li>
+        </prerequisites>
+        <!-- Position on the research screen -->
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>3.2</researchViewY>
+    </ResearchProjectDef>
 </Defs>
